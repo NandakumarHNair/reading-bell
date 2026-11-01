@@ -1,19 +1,29 @@
-# Publish the completed Reading Bell project
+# Reading Bell deployment
 
-## Completed
+Published on 1 November 2026.
 
-`index.html` is the Quiet Session Edition (2.0.0). The requested page target, total session duration, start/end buzzer only, and post-session actual-pages percentage are implemented. The recurring interval system and its check-in popup are absent. The source is self-contained and retains the established design. Forty-seven automated regression checks passed.
+- Repository: https://github.com/NandakumarHNair/reading-bell
+- App: https://nandakumarhnair.github.io/reading-bell/
+- Host: GitHub Pages, with HTTPS enforced
+- Publishing source: `main`, `/(root)`
 
-## Not completed
+The application source is the Quiet Session Edition (2.0.0) supplied in the project ZIP. Its design and behavior were preserved.
 
-GitHub upload and live hosting were not performed. The GitHub connection available during this work returned no repositories owned by the user's account. It exposed only an unrelated collaborator repository, which was left unchanged. There was no repository-creation, Pages-configuration, or Work-mode handoff action available in the current session.
+## Verification
 
-## Exact next steps in a suitably authorized Work session
+- Both inline JavaScript blocks passed syntax checks.
+- A browser session confirmed that Space pauses and resumes without resetting the remaining time.
+- A one-minute session reached completion normally.
+- Entering 6.5 actual pages against 8 planned pages displayed 81.3%.
+- Source inspection confirmed one start buzzer and one finish buzzer, silent pause/resume, and no recurring alarm or check-in paths.
+- The app contains no outgoing network requests or remote scripts.
 
-1. Use the user's authorized GitHub connection or signed-in browser/CLI. Confirm the active account rather than assuming it.
-2. Locate the user's intended Reading Bell repository. If none exists and repository creation is authorized, create a dedicated public `reading-bell` repository for free GitHub Pages hosting. Do not use the unrelated collaborator repository or change another project's visibility.
-3. Publish this tested `index.html` and `.nojekyll` with the README and optional source/test files. Do not rebuild or redesign it. Preserve any unrelated existing files. Do not upload screenshots, browser data, credentials, imported fonts, or personal reading results.
-4. Enable GitHub Pages with the actual default branch and root directory. The included `publish.py` can handle this with the user's own `gh` sign-in. It asks for confirmation of public publication and guards against unrelated repositories.
-5. Verify the Pages build and load the resulting URL. Check the target form, start, pause/resume, completion result, and absence of recurring alarms. Report the actual repository URL and live site URL only after success. If access remains blocked, report the exact missing permission rather than claiming publication.
+The included regression suite contains 47 checks. The previous archive reported that they passed, but that full suite was not rerun for this deployment because its test browser was unavailable. Browser UI checks were performed separately.
 
-The browser app still cannot guarantee alarms while an iPhone is locked or a Mac sleeps. Hosting does not remove that limitation.
+Physical sound and timing on locked or sleeping devices were not independently verified. Keep the page open and the device awake when relying on the finish buzzer.
+
+## Updating
+
+Edit the repository's `index.html` and commit to `main`. GitHub Pages rebuilds the site automatically; verify the deployment in the repository's Actions tab. The optional `publish.py` helper also supports updating this recognized Reading Bell repository using your own GitHub CLI sign-in.
+
+Do not commit browser settings, personal reading results, imported fonts, credentials, or QA screenshots.
