@@ -31,7 +31,12 @@ Official references:
 
 ## Publish on GitHub Pages
 
-GitHub Pages supports static HTML and is free with public repositories on GitHub Free. This archive is **prepared for deployment, not already deployed**.
+GitHub Pages supports static HTML and is free with public repositories on GitHub Free.
+
+- **Use the app:** https://nandakumarhnair.github.io/reading-bell/
+- **Source repository:** https://github.com/NandakumarHNair/reading-bell
+
+The site is published from the `main` branch and repository root. Updates to that branch trigger GitHub Pages deployment.
 
 Using GitHub CLI (`gh`) and Python 3.8+:
 
